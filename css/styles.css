@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "EB Garamond", serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page-header {
+  margin: 1em;
+  padding: 2em;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 50%);
+  border-radius: 0.5em;
+}
+
+.page-header__difficulty-choices--label,
+.page-header__timer {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #f0d3a4;
+  text-shadow: 0 0 1em rgba(0, 0, 0, 50%);
+}
+
+.page-header__reset {
+  width: 65px;
+  opacity: 100%;
+  cursor: pointer;
+}
+
+.page-header__reset.hidden {
+  opacity: 0%;
+}
+
+.page-header__timer {
+  font-size: 4rem;
+  height: 60px;
+}
+
+.page-header__difficulty-choices {
+  vertical-align: middle;
+  margin: 0 1em;
+}
+
+.page-header__difficulty-choices--input,
+.page-header__difficulty-choice {
+  font-size: 1.5rem;
+  font-family: "EB Garamond", serif;
+  font-weight: bold;
+  color: #481308;
+  padding: 0 0.5em;
+}
+
+.board {
+  position: relative;
+  padding: 0 2em;
+  padding-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.board__game--play {
+  min-width: 650px;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid white;
+  border-radius: 0.5em;
+}
+
+.board__game-card {
+  position: relative;
+  max-width: 100px;
+  max-height: 148px;
+  margin: 0.5em;
+}
+
+.board__game-card-image--background,
+.board__game-card-image--front {
+  border: 2px solid white;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 30%);
+}
+
+.board__game-card-image--background.hidden,
+.board__game-card-image--front.hidden {
+  display: none;
+}
+
+.board__game--results {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: right;
+  font-size: 3rem;
+  padding: 0 1em;
+}
+
+.board__game--results .hidden {
+  display: none;
+}
+
+.board__game-results-result {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 1em 0.5em;
+  transition: all 1s ease-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 100%);
+}
+
+.board__game-results-result--lose {
+  background-image: url('../img/game-lost.jpg');
+}
+
+.board__game-results-result--win {
+  background-image: url('../img/game-won.jpg');
+  align-items: start;
+}
+
+.board__game-results-result--lose {
+  color: #850000;
+}
+
+.board__game-results-result--win {
+  color: #0c490a;
+}
+
+.result-title {
+  width: 40%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.result-info {
+  width: 40%;
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+.new-game {
+  width: 40%;
+  font-family: "EB Garamond", serif;
+  font-size: 1.5rem;
+  border: 2px solid white;
+  color: white;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+.new-game:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.new-game--lose {
+  background-color: #850000;
+}
+
+.new-game--lose:hover {
+  border: 2px solid #850000;
+  color: #850000;
+}
+
+.new-game--win {
+  background-color: #0c490a;
+}
+
+.new-game--win:hover {
+  border: 2px solid #0c490a;
+  color: #0c490a;
+}
+
+@media screen and (max-width : 1120px) {
+
+  .page-header__difficulty-choices--label,
+  .page-header__timer {
+    font-size: 1.2rem;
+  }
+
+  .page-header__timer {
+    font-size: 3rem;
+  }
+
+  .page-header__difficulty-choices--input,
+  .page-header__difficulty-choice {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width : 680px) {
+
+  .page-header {
+    margin: 0.5em;
+    padding: 0.5em;
+    vertical-align: middle;
+  }
+
+  .page-header__difficulty-choices--label {
+    font-size: 0.7rem;
+  }
+
+  .page-header__timer {
+    font-size: 2.5rem;
+  }
+
+  .page-header__difficulty-choices--input,
+  .page-header__difficulty-choice {
+    font-size: 1rem;
+  }
+
+  .board__game--play {
+    min-width: 360px;
+  }
+
+  .board__game-card {
+    max-width: 60px;
+    max-height: 89px;
+    margin: 0.2em;
+  }
+
+  .board__game--results {
+    font-size: 1.5rem;
+  }
+
+  .result-info {
+    font-size: 1.2rem;
+  }
+
+  .new-game {
+    font-size: 1rem;
+  }
+}
